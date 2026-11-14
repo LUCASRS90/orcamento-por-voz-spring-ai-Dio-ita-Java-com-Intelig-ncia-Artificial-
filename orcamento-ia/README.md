@@ -1,4 +1,4 @@
-# 🎙️ Orçamento IA — API inteligente com Spring Boot + Spring AI
+#  Orçamento IA — API inteligente com Spring Boot + Spring AI
 
 Projeto do **Desafio de Projeto Spring AI (DIO)**. Uma API de orçamento pessoal que entende comandos
 de voz como *"gastei 35 reais no almoço"* ou *"quanto gastei com transporte este mês?"*.
@@ -39,7 +39,7 @@ Java 21 · Spring Boot 3.4 · Spring AI 1.0 (OpenAI: chat, Whisper, TTS) · Spri
 4. Rode pela aba **Run and Debug → "Orcamento IA"** (F5), ou no terminal: `mvn spring-boot:run`
 5. A API sobe em `http://localhost:8080` (console do banco: `/h2-console`).
 
-> ⚠️ Nunca coloque a chave no código nem faça commit dela.
+>  Nunca coloque a chave no código nem faça commit dela.
 
 ## Como testar o fluxo principal
 
@@ -59,7 +59,7 @@ curl -X POST localhost:8080/api/voice/audio -F "audio=@comando.mp3" -o resposta.
 
 Testes automatizados (não precisam de chave): `mvn test`
 
-## ✨ Melhoria implementada
+##  Melhoria implementada
 
 1. **Nova ferramenta de Tool Calling** — `getSpendingByCategory`: responde *"quanto gastei com alimentação este mês?"*
    (nova query `sumByCategory` no repositório).
@@ -68,15 +68,3 @@ Testes automatizados (não precisam de chave): `mvn test`
 3. **Testes** do serviço (`TransactionServiceTest`).
 4. **Endpoints REST** de apoio: `GET/POST /api/transactions` e `GET /api/transactions/balance`.
 
-## 🎯 Desafios para você evoluir (escolha um!)
-
-- 🟢 **Fácil:** adicione a ferramenta `deleteLastTransaction` ("apaga o último lançamento").
-- 🟢 **Fácil:** inclua prints/exemplos de requisição neste README.
-- 🟡 **Médio:** crie um limite mensal por categoria e avise por voz quando passar de 80 %.
-- 🟡 **Médio:** use `@WebMvcTest` + `@MockitoBean AssistantService` para testar os controllers.
-- 🔴 **Difícil:** adicione memória de conversa (`MessageChatMemoryAdvisor`) para frases como "e no mês passado?".
-- 🔴 **Difícil:** troque o provedor (ex.: Ollama local) mudando só dependência e properties.
-
-## 📚 O que eu aprendi
-
-_(Preencha com suas palavras: o que foi mais difícil, o que funcionou, o que faria diferente.)_
