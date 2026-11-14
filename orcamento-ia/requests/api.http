@@ -1,0 +1,40 @@
+@baseUrl = http://localhost:8080
+
+### Chat por texto (simula um comando de voz já transcrito)
+POST {{baseUrl}}/api/chat
+Content-Type: application/json
+
+{ "message": "Gastei 35 reais no almoço hoje" }
+
+### Consultar saldo
+POST {{baseUrl}}/api/chat
+Content-Type: application/json
+
+{ "message": "Qual é o meu saldo?" }
+
+### Consulta por categoria (melhoria)
+POST {{baseUrl}}/api/chat
+Content-Type: application/json
+
+{ "message": "Quanto gastei com alimentação este mês?" }
+
+### Enviar áudio (coloque um arquivo em requests/comando.mp3)
+POST {{baseUrl}}/api/voice
+Content-Type: multipart/form-data; boundary=B
+
+--B
+Content-Disposition: form-data; name="audio"; filename="comando.mp3"
+Content-Type: audio/mpeg
+
+< ./comando.mp3
+--B--
+
+### Endpoints REST
+GET {{baseUrl}}/api/transactions
+###
+GET {{baseUrl}}/api/transactions/balance
+###
+POST {{baseUrl}}/api/transactions
+Content-Type: application/json
+
+{ "description": "Salário", "amount": 3000, "type": "INCOME", "category": "salário" }
